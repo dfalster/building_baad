@@ -1,12 +1,5 @@
 # Rendered version of talk
 
-A pdf is available [here](https://github.com/richfitz/reproducibility-2014/releases/download/v1.0/slides.pdf)
-
-# Compiling:
-
-```
-make
-```
 
 # Requirements:
 
@@ -22,4 +15,4 @@ Inkscape for SVG to PDF conversion (`diagrams/`).
 
 # Credits
 
-Design taken from this [great talk](http://bost.ocks.org/mike/d3/workshop/#0).
+Forked from [Rich FitzJohn's talk on reproducibility](https://github.com/richfitz/reproducibility-2014/releases/download/v1.0/slides.pdf), which uses design from this [great talk](http://bost.ocks.org/mike/d3/workshop/#0).

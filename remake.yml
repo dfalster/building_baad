@@ -1,0 +1,18 @@
+packages:
+
+sources:
+  - R
+
+knitr_options:
+  vignette:
+    auto_figure_prefix: true
+    chdir: true
+
+targets:
+  all:
+    quiet: true
+    depends:
+      - slides.pdf
+
+  slides.pdf:
+    command: latex_build("slides.tex", clean=TRUE, engine=I("xelatex"))
