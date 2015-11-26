@@ -60,7 +60,7 @@ targets:
       - slides.pdf
 
   slides.pdf:
-    command: latex_build("slides.tex", clean=TRUE, engine=I("xelatex"))
+    command: xelatex_build_clean("slides.tex")
     depends:
       - figures
       - snippets
@@ -75,12 +75,35 @@ targets:
       - figures/tradeoff-Falster2015-1.pdf
       - figures/tradeoff-Falster2015-2.pdf
       - figures/tradeoff-Falster2015-3.pdf
+      - downloads/BTFF15.jpg
   
   snippets:  
     depends:
       - snippets/baad_package.pdf
       - snippets/baad_rebuild.pdf
+      - snippets/baad_dataMatch.pdf
+      - snippets/remake_yaml.pdf
+      - snippets/remake_figures.pdf
 
+  snippets/baad_package.pdf:
+    command: xelatex_build_clean("snippets/baad_package.tex")
+
+  snippets/baad_rebuild.pdf:
+    command: xelatex_build_clean("snippets/baad_rebuild.tex")
+
+  snippets/baad_dataMatch.pdf:
+    command: xelatex_build_clean("snippets/baad_dataMatch.tex")
+
+  snippets/remake_yaml.pdf:
+    command: xelatex_build_clean("snippets/remake_yaml.tex")
+
+  snippets/remake_figures.pdf:
+    command: xelatex_build_clean("snippets/remake_figures.tex")
+
+  downloads/BTFF15.jpg:
+    download: https://www.wow247.co.uk/wp-content/uploads/2015/09/back-to-the-future-poster.jpg
+    cleanup_level: purge
+ 
   downloads/michael.png:
     download: https://raw.githubusercontent.com/dfalster/baad/master/extra/baad.png
     cleanup_level: purge

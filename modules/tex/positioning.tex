@@ -89,6 +89,16 @@ minimum width=\paperwidth, text width=.95\paperwidth]
   \end{tikzpicture}
 }
 
+\newcommand{\bottomhangingborder}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]%
+    \node[anchor=north, fill=white, rounded corners,
+  draw=b-orange, line width=2pt] at
+    ($(current page.center) + (0, .17\paperheight)$) {
+      #1
+    };
+  \end{tikzpicture}
+}
+
 \newcommand{\bottomhangingleft}[1]{%
   \begin{tikzpicture}[remember picture, overlay]%
     \node[anchor=north west,align=left] at

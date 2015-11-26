@@ -1,0 +1,23 @@
+\documentclass[class=minimal,border=0]{standalone}
+\input{snippet}
+\begin{document}%
+\begin{BVerbatim}[bgcolor=b-darkgrey]
+\color{b-blue}# Rebuild figures from doi.org/10.1101/025361
+\color{b-green}git clone git@github.com:RemkoDuursma/baadanalysis.git 
+\color{b-green}cd baadanalysis 
+\color{b-green}remake figures
+\color{b-pink}
+\color{b-pink}[  LOAD ] 
+\color{b-pink}<  MAKE > figures
+\color{b-pink}[ BUILD ] downloads/baad.rds      \color{b-grey}|  download_data("....
+\color{b-pink}[  READ ]                         \color{b-grey}|  # loading packages
+\color{b-pink}[ BUILD ] baad_all                \color{b-grey}|  baad_all <- readRDS(...
+\color{b-pink}[ BUILD ] baad_climate1           \color{b-grey}|  baad_climate1 <- addWor...
+\color{b-pink}[ BUILD ] dataset                 \color{b-grey}|  dataset <- prepare_data...
+\color{b-pink}[  PLOT ] figures/Figure1.pdf     \color{b-grey}|  figure1(baad_mapmat,...
+\color{b-pink}[  PLOT ] figures/Figure2.pdf     \color{b-grey}|  figure2(dataset) 
+\color{b-pink}   ...
+\color{b-pink}[  PLOT ] figures/FigureS3.pdf    \color{b-grey}|  figureS3(dataset)
+\color{b-pink}[ ----- ] figures
+\end{BVerbatim}
+\end{document}

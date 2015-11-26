@@ -41,7 +41,7 @@
     \node[anchor=south west] at (B.north west) {
       \resizebox{.9\paperwidth}{!}{%
         \color{white} 
-        Daniel Falster, Remko Duursma, Rich FitzJohn, Diego Barneche}
+        Daniel Falster, Rich FitzJohn, Remko Duursma, Diego Barneche}
     };
  \end{tikzpicture}
 \end{frame}
@@ -69,7 +69,7 @@
 \end{frame}
 
 %-----------------------------------
-\begin{frame}\frametitle{\color{b-blue} Origins}
+\begin{frame}\frametitle{ Why (1): \color{b-blue} We needed data}
 \begin{tikzpicture}[remember picture, overlay]
   \node[anchor = north, align=center, fill=white, rounded corners,
   draw=b-orange, line width=2pt] at ($(current page.south) +(0,8cm)$) {
@@ -88,6 +88,19 @@
    };
   \end{tikzpicture}
 \end{frame}
+
+%-----------------------------------
+{\setbeamercolor{background canvas}{bg=black}
+\setbeamercolor{frametitle}{bg=black}
+\begin{frame}\frametitle{ Why (2):\color{b-blue} Trial new techniques}
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor = north, align=center] at ($(current page.south) +(0,8.5cm)$) {
+    \includegraphics[width=0.55\textwidth]{downloads/BTFF15.jpg}
+   };
+  \end{tikzpicture}
+\end{frame}
+}
+%-----------------------------------
 
 
 \begin{frame}
@@ -109,9 +122,17 @@
 
 \begin{frame}
   \herohigh{\color{b-purple} Script everything}
-  \bottomhanging{
-    \includegraphics[width=.95\paperwidth]{snippets/baad_rebuild}
-  }
+
+  \begin{tikzpicture}[remember picture, overlay]%
+    \node[anchor=north, align=center] at
+    ($(current page.center) + (0, .17\paperheight)$) {
+    \includegraphics[width=.95\paperwidth]{snippets/baad_rebuild}};
+    
+    \node[anchor=north, align=center] at
+    ($(current page.center) + (0, -.2\paperheight)$) {
+    \only<2>{\normalsize {\FA \faThumbsUp} Easy to modify, transparent, extensible}
+    };
+  \end{tikzpicture}
 \end{frame}
 
 
@@ -122,59 +143,63 @@
     \node [anchor=north, align=left] at
     ($(current page.center) + (0, .17\paperheight)$) {%
       \begin{tabular}{c l}
+        & Pipeline for processing and review\\
         & Don't modify raw data files \\
         & Encode meta-data as data \\
         & Version control \\
-        & Pipeline for processing and review\\
       \end{tabular}
   };
   \end{tikzpicture}
 \end{frame}
 
+
 \begin{frame}
   \herohigh{\color{b-purple} Pipeline}
-  \bottomhanging{
+  \bottomhangingborder{
     \includegraphics[width=.75\paperwidth]{downloads/pipeline.png}
   }
 \end{frame}
 
 \begin{frame}
-  \herohigh{\color{b-pink} Review}
+  \minionhigh{\color{b-purple} Encode meta-data as data}
   \bottomhanging{
+    \includegraphics[width=.95\paperwidth]{snippets/baad_dataMatch}
+  }
+\end{frame}
+
+\begin{frame}
+  \herohigh{\color{b-pink} Review}
+  \bottomhangingborder{
     \includegraphics[width=.75\paperwidth]{downloads/data_review_error.png}
   }
 \end{frame}
 
 \begin{frame}
-  \minionhigh{Collaborate, with \\[-.7ex]
-      with \color{b-purple}  version control}%
+  \herohigh{\color{b-purple}  Collaborate}%
   \lowerhalf{
-    \LARGE R + {\color{b-purple} git} +
-      {\color{b-orange}GitHub} = {\color{b-pink}\heart}%
+    \LARGE {\color{white} R + {\color{b-purple} git} +
+          {\color{b-orange}GitHub} =} {\color{b-pink}\heart}%
   }
 \end{frame}
 
 \begin{frame}
   \only<1>{\minionhigh{Work on same code base\phantom{g}}}%
   \only<2>{\minionhigh{See what changed}}%
-  \only<3>{\minionhigh{See who changed it}}%
-  \only<4>{\minionhigh{git blame}}%
   \bottomhanging{%
-    \includegraphics<1>[width=\paperwidth]{shots/version_control_collaboration}%
-    \includegraphics<2>[width=\paperwidth]{shots/version_control_changes}%
-    \includegraphics<3-4>[width=\paperwidth]{shots/version_control_blame}%
+    \includegraphics<1>[width=0.9\paperwidth]{shots/version_control_collaboration}%
+    \includegraphics<2>[width=0.9\paperwidth]{shots/version_control_changes}
     }
 \end{frame}
 
 
 \begin{frame}
-  \minionhigh{\LARGE{\color{b-pink} CI} = \color{b-blue}Continuous Integration}
+  \minionhigh{\LARGE{\color{b-pink} CI} {\color{white} = }\color{b-blue}Continuous Integration}
   \lowerhalf{
     \begin{minipage}{\textwidth}
       \begin{enumerate}
       \item Commit changes
-      \item \only<1>{Make sure nothing breaks}%
-        \only<2>{\color{b-blue}Push to GitHub\phantom{g}}
+      \item Push to GitHub
+      \item Get an email if something breaks
       \end{enumerate}
     \end{minipage}
   }
@@ -185,30 +210,16 @@
   \minionhigh{%
     \only<1>{Runs on virtual machine\ldots}}
   \bottomhanging{%
-    \includegraphics<1>[width=\paperwidth]{shots/travis_log_1_spinup}%
+    \includegraphics<1>[width=\paperwidth]{shots/travis_spinup}%
   }
 \end{frame}
 
 \begin{frame}
   \minionhigh{Set and forget -- never gets bored}
   \bottomhanging{
-    \includegraphics[width=\paperwidth]{shots/travis_builds}%
+    \includegraphics[width=0.65\paperwidth]{shots/travis_builds}%
   }
-  \bottomleft{\href{https://travis-ci.org/richfitz/wood/builds}{https://travis-ci.org/richfitz/wood/builds}}
-\end{frame}
-
-\begin{frame}
-  \minionhigh{Find out what/who broke the project}
-  \bottomhanging{%
-    \includegraphics<1>[width=\paperwidth]{shots/travis_broken1}%
-    \includegraphics<2>[width=\paperwidth]{shots/travis_broken2}}
-\end{frame}
-
-\begin{frame}
-  \herohigh{\color{b-purple} Remake}
-  \bottomhanging{
-
-  }
+  \bottomleft{\href{https://travis-ci.org/dfalster/baad/builds}{travis-ci.org/dfalster/baad/builds}}
 \end{frame}
 
 \begin{frame}
@@ -221,9 +232,62 @@
 
 \begin{frame}
   \herohigh{\color{b-purple} Started open}
+    \begin{tikzpicture}[remember picture, overlay]%
+    \node[anchor=north west, align=left, text width=12cm] at
+    ($(current page.west) + (0.05\paperwidth, 0.05\paperheight)$) {
+      \footnotesize
+        {\color{b-blue} Daniel:} {\color{white}Would you like to co-author a data paper in Ecology? }\\
+        
+        {\color{b-pink} Yes {\FA \faArrowRight}}  {\color{white}Great, tell us what you've got.} \\
+    
+        {\color{b-pink} No {\FA \faArrowRight}}  {\color{white} No worries. Get back to us if you change you're mind.}\\
+    };
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+  \herohigh{\color{b-purple} remake}
   \bottomhanging{
-    Would you like to publish
+    \includegraphics<1>[width=0.8\paperwidth]{shots/remake_diagram}%
+    \includegraphics<2>[width=1\paperwidth]{shots/remake_duursma}%
+    \includegraphics<3>[width=0.8\paperwidth]{snippets/remake_figures}%
+    \includegraphics<4>[width=0.7\paperwidth]{snippets/remake_yaml}%
+
   }
+\end{frame}
+
+\begin{frame}\frametitle{ {\color{b-pink} Thanks to collaborators}}
+  
+  \begin{tikzpicture}[remember picture, overlay]%
+    \node [anchor=north, align=left] at
+    ($(current page.center) + (0, .4\paperheight)$) {%
+    {\small
+      \begin{tabular}{c >{\color{white}}l  c >{\color{white}}l }
+        \raisebox{-.03\paperheight}{%
+          \includegraphics[height=.12\paperheight]{pics/people/FitzJohn}}&
+        Rich FitzJohn  & 
+        \raisebox{-.03\paperheight}{%
+          \includegraphics[height=.12\paperheight]{pics/people/Duursma}}&
+        Remko Duursma  \\
+        \raisebox{-.03\paperheight}{%
+          \includegraphics[height=.12\paperheight]{pics/people/Barneche}}&
+        Diego Barneche & 
+        \raisebox{-.03\paperheight}{%=
+          \includegraphics[height=.12\paperheight]{pics/people/Ishihara}}&
+        Masae Ishihara \\
+     \end{tabular}
+      }
+  };
+  \node [anchor=south, align=left, text width = 12cm] at
+    ($(current page.south) + (0, 0.05cm)$) {%
+   {\baselineskip=2.5pt\fontsize{9pt}{9pt} \selectfont  \color{white} \\
+   {\color{b-blue}Australia:} Angelica V{\aa}rhammar, Michael Aspinwall, Michael Battaglia, James Camac, Steve Hamilton, Lindsay Hutley, Karel Mokany, Anthony O'Grady, Olusegun Osunkoya, David Tissue, Elizabeth Wenk, Richard Williams,Fabiano de Aquino Ximenes \par
+   \vspace{1em}
+   {\color{b-blue} World:} Masahiro Aiba, Makoto Ando, Niels Anten, Jennifer Baltzer, Christopher Baraloto, John Battles, Ben Bond-Lamberty, Michiel van Breugel,  Yves Claveau, Lluís Coll, Masako Dannoura, Sylvain Delagrange, Jean-Christophe Domec, Farrah Fatemi, Wang Feng, Veronica Gargaglione, Yoshiaki Goto, Akio Hagihara, Jefferson Hall, Degi Harja, Tsutom Hiura, Robert Holdaway,  Tomoaki Ichie, Eric Jokela, Anu Kantola, Jeff Kelly, Tanaka Kenzo, David King, Brian Kloeppel, Takashi Kohyama, Akira Komiyama, Jean-Paul Laclau, Christopher Lusk, Douglas Maguire, Guerric le Maire, Annikki M{\"a}kel{\"a}, Lars Markesteijn, John Marshall, Katherine McCulloh, Itsuo Miyata, Shigeta Mori, Randall Myster, Masahiro Nagano, Shawna Naidu, Yann Nouvellon, Kevin O'Hara, Toshiyuki Ohtsuka, Noriyuki Osada,  Pablo Luis Peri, Any Mary Petritan, Lourens Poorter, Angelika Portsmuth, Catherine Potvin, Johannes Ransijn, Douglas Reid, Sabina Ribeiro, Scott Roberts, Rolando Rodríguez, Angela Salda{\~n}a-Acosta, Ignacio Santa-Regina, Kaichiro Sasa, Galia Selaya, Stephen Sillett, Frank Sterck, Kentaro Takagi, Takeshi Tange, Hiroyuki Tanouchi, Toru Umehara, Hajime Utsugi, Matthew Vadeboncoeur, Fernando Valladares, Petteri Vanninen, Jian Wang, Atsushi Yamaba, Toshihiro Yamada, Takuo Yamakura, Ruth Yanai, Robert York \par
+}
+   };
+
+  \end{tikzpicture}
 \end{frame}
 
 \begin{frame}

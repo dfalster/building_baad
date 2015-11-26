@@ -1,5 +1,10 @@
 ## TODO: move this into remake TODO: options for saying what command is being
 ## run
+
+xelatex_build_clean <- function(...) {
+  latex_build(..., clean=TRUE, engine=I("xelatex"))
+}
+
 latex_build <- function(filename, bibliography = NULL, chdir = TRUE, interaction = "nonstopmode",
   max_attempts = 5L, clean = FALSE, engine = "pdflatex") {
   if (chdir && dirname(filename) != "") {

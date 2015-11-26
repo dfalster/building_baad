@@ -1,0 +1,18 @@
+\documentclass[class=minimal,border=0]{standalone}
+\input{snippet}
+\begin{document}%
+\begin{BVerbatim}[bgcolor=b-darkgrey]
+\color{b-pink}remake.yml
+
+\color{b-blue}  downloads/baad.rds:
+\color{b-blue}    {\color{b-purple}download:} {\color{b-green}https://github.com/...}
+
+\color{b-blue}  baad:
+    \color{b-purple}command: {\color{b-orange}readRDS}({\color{b-blue}"downloads/baad.rds"})
+
+\color{b-blue}  figures/baad_variable_count.pdf:
+    \color{b-purple}command:  {\color{b-orange}baad_variable_count}({\color{b-blue}baad})
+    \color{b-purple}     {\color{b-purple}plot:} {\color{b-orange}TRUE}
+
+\end{BVerbatim}
+\end{document}
