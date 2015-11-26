@@ -134,11 +134,14 @@ targets:
   figures/tradeoff-Falster2015-1.pdf:
     command: allometry_LH(baad, 1)
     plot: square3
+    quiet: TRUE
 
   figures/tradeoff-Falster2015-2.pdf:
     command: allometry_LH(baad, 2)
     plot: square3
+    quiet: TRUE
 
   figures/tradeoff-Falster2015-3.pdf:
     command: allometry_LH(baad,3)
     plot: square3
+    quiet: TRUE
