@@ -47,23 +47,26 @@
 \end{frame}
 
 %-----------------------------------
-\begin{frame}\frametitle{\color{b-blue} A compilation}
-
-\begin{tikzpicture}[remember picture, overlay]
-  \node[anchor = south, align=center, fill=white, rounded corners,
-  draw=b-orange, line width=2pt] at ($(current page.south) +(0,1cm)$) {
-    \includegraphics<1>[width=0.9\textwidth]{downloads/map.png}
-  };
-  \end{tikzpicture}
-\end{frame}
-
-
-%-----------------------------------
-\begin{frame}\frametitle{\color{b-purple} ... of field data}
+\begin{frame}\frametitle{\color{b-purple} Field data}
 \begin{tikzpicture}[remember picture, overlay]
   \node[anchor = south, align=center] at ($(current page.south) +(0,0.25cm)$) {
     \includegraphics<1>[width=0.95\textwidth]{pics/baad/Slide09.jpg}
     \includegraphics<2>[width=0.95\textwidth]{pics/baad/Slide10.jpg}
+  };
+  \end{tikzpicture}
+\end{frame}
+
+%-----------------------------------
+\begin{frame}\frametitle{\color{b-blue} Global compilation}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor = south, align=center] at ($(current page.south) +(0,1cm)$) {
+    \color{white} 176 studies,  21084 plants, 678 species
+  };
+
+  \node[anchor = south, align=center, fill=white, rounded corners,
+  draw=b-orange, line width=2pt] at ($(current page.south) +(0,2.5cm)$) {
+    \includegraphics<1>[width=0.98\textwidth]{figures/map}
   };
   \end{tikzpicture}
 \end{frame}

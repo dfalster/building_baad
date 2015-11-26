@@ -1,12 +1,12 @@
 
 my_cols <- function(){
   c(b_blue="#6baed6", 
-    b_darkgrey="#2D2D2D", 
     b_grey="#969696", 
     b_purple="#9e9ac8", 
     b_green="#74c476", 
     b_pink="#e377c2", 
-    b_orange="#FD8D3C"
+    b_orange="#FD8D3C",
+    b_darkgrey="#2D2D2D"
   )
 }
 
@@ -81,3 +81,83 @@ allometry_LH <- function(baad, option=1){
   mtext(expression("Individual's leaf area"~~(m^2)), 1, line=3)
   legend("topleft", legend = paste(length(species), " individuals\n", length(unique(species)), " species"), bty = "n", cex = 0.5)
  }
+
+figure_map <- function(baad){
+  data <- baad$data
+  # var_def <- baad$dictionary
+  # vars <- setdiff(var_def$variable[var_def$type == "numeric"],
+  #                 c("map", "mat", "lai", "age")) # World plot colored by vegetation type
+  cols <- make_transparent(c(my_cols(),"navajowhite4"),0.67)
+  vegs <- c("BorF","Sav","TempF","TempRF","TropRF","TropSF","Wo")
+  vegs_labels <- c("Boreal forest","Savannah","Temperate forest",
+                   "Temperate rainforest","Tropical rainforest",
+                   "Tropical seasonal forest","Woodland","Glasshouse, Common garden")
+
+  drawWorldPlot(data[data$vegetation == vegs[1],], sizebyn=TRUE, pchcol=cols[1])
+  for(i in 2:length(vegs)){
+    drawWorldPlot(data[data$vegetation == vegs[i],], sizebyn=TRUE, pchcol=cols[i], add=TRUE)
+  }
+  drawWorldPlot(data[data$growingCondition == "GH",], sizebyn=TRUE,
+                pchcol=cols[8], add=TRUE)
+  par(xpd=NA)
+  legend(-190, 40, vegs_labels[1:8], fill=cols[1:8], bty='n', cex=0.8)
+  ns <- c(10,100,1000)
+  X <- rep(-180,3)
+  Y <- seq(-70,-50,by=10)
+  symbols(x=X, y=Y, circles=log10(ns), inches=0.1,
+          fg="black", bg=my_cols()[1], add=TRUE)
+  text(x=X+5, y=Y, labels=as.character(ns),pos=4)
+  text(x=X, y=Y[3]+10, labels="plants", pos=4)
+
+}
+
+
+drawWorldPlot <- function(data, sizebyn=FALSE, add=FALSE,
+                          pchcol="red", legend=TRUE) {
+  if (!add){
+    map('world',col="grey80",bg="white",lwd=0.5,fill=TRUE,resolution=0,wrap=FALSE, border="grey80", ylim=c(-90, 90), mar=c(0,0,0,0))
+    map('world',col="black",boundary=TRUE,lwd=0.2,interior=FALSE,fill=FALSE,add=TRUE,resolution=0,wrap=TRUE)
+  }
+
+  ## See reports-port
+  # Remove all duplicates (increases speed and minimizes file size)
+  latlon <- with(data, paste(latitude, longitude))
+  lat <- data$latitude[!duplicated(latlon)]
+  lon <- data$longitude[!duplicated(latlon)]
+
+  j  <-  !is.na(lat) & !is.na(lon)
+
+  # Location only sometimes missing - but lat/lon can still be in dataset anyway.
+  # & data$loc != "NA" | is.na(data$loc)
+
+  if(!any(j)){
+    polygon(c(-100,95,95,-100), c(-10,-10,15,15), col=rgb(0,0,0,240,maxColorValue=255))
+    text(-100, 0, expression(paste(bold("Missing coordinate/location"))), col="red", xpd=TRUE, pos=4, cex=0.8)
+  } else {
+
+    if(!sizebyn){
+      points(lon,lat, pch=19, col=pchcol, cex=0.6)
+    } else {
+      n <- table(latlon)
+      symbols(lon,lat, circles=log10(n), inches=0.1, fg="black", bg=pchcol, add=TRUE)
+    }
+  }
+}
+ 
+
+
+## Make colours semitransparent:
+make_transparent <- function(col, opacity=0.5) {
+  if (length(opacity) > 1 && any(is.na(opacity))) {
+    n <- max(length(col), length(opacity))
+    opacity <- rep(opacity, length.out = n)
+    col <- rep(col, length.out = n)
+    ok <- !is.na(opacity)
+    ret <- rep(NA, length(col))
+    ret[ok] <- Recall(col[ok], opacity[ok])
+    ret
+  } else {
+    tmp <- col2rgb(col)/255
+    rgb(tmp[1, ], tmp[2, ], tmp[3, ], alpha = opacity)
+  }
+}
