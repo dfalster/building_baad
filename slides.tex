@@ -46,12 +46,28 @@
  \end{tikzpicture}
 \end{frame}
 
+
+\begin{frame}
+  \herohigh{Lots of {\color{b-pink} small data}}
+  \bottomhanging{
+    \includegraphics[width=0.9\paperwidth]{pics/baad/Collage}
+  }
+\end{frame}
+
+\begin{frame}
+  \herohigh{{\color{b-blue} \#otherpeoplesdata}}
+  \begin{tikzpicture}[remember picture, overlay]
+  \node[anchor = south, align=center] at ($(current page.south) +(0, 2cm)$) {
+      \includegraphics[width=.85\paperwidth]{shots/otherpeoplesdata.png}
+ };
+  \end{tikzpicture}
+\end{frame}
+
 %-----------------------------------
-\begin{frame}\frametitle{\color{b-purple} Field data}
+\begin{frame}\frametitle{\color{b-purple} Harvested plants}
 \begin{tikzpicture}[remember picture, overlay]
   \node[anchor = south, align=center] at ($(current page.south) +(0,0.25cm)$) {
-    \includegraphics<1>[width=0.95\textwidth]{pics/baad/Slide09.jpg}
-    \includegraphics<2>[width=0.95\textwidth]{pics/baad/Slide10.jpg}
+    \includegraphics<1>[width=0.95\textwidth]{pics/baad/Slide10.jpg}
   };
   \end{tikzpicture}
 \end{frame}
@@ -72,12 +88,13 @@
 \end{frame}
 
 %-----------------------------------
-\begin{frame}\frametitle{ Why (1): \color{b-blue} We needed data}
+\begin{frame}\frametitle{ Why: \color{b-blue} We needed data}
 \begin{tikzpicture}[remember picture, overlay]
   \node[anchor = north, align=center, fill=white, rounded corners,
   draw=b-orange, line width=2pt] at ($(current page.south) +(0,8cm)$) {
-    \includegraphics<1>[width=0.6\textwidth]{figures/tradeoff-Falster2015-2.pdf}
-    \includegraphics<2>[width=0.6\textwidth]{figures/tradeoff-Falster2015-3.pdf}
+    \includegraphics<1>[width=0.6\textwidth]{figures/tradeoff-Falster2015-1.pdf}
+    \includegraphics<2>[width=0.6\textwidth]{figures/tradeoff-Falster2015-2.pdf}
+    \includegraphics<3>[width=0.6\textwidth]{figures/tradeoff-Falster2015-3.pdf}
    };
   \end{tikzpicture}
 \end{frame}
@@ -92,93 +109,89 @@
   \end{tikzpicture}
 \end{frame}
 
-%-----------------------------------
-{\setbeamercolor{background canvas}{bg=black}
-\setbeamercolor{frametitle}{bg=black}
-\begin{frame}\frametitle{ Why (2):\color{b-blue} Trial new techniques}
-\begin{tikzpicture}[remember picture, overlay]
-  \node[anchor = north, align=center] at ($(current page.south) +(0,8.5cm)$) {
-    \includegraphics[width=0.55\textwidth]{downloads/BTFF15.jpg}
-   };
-  \end{tikzpicture}
-\end{frame}
-}
-%-----------------------------------
-
-
 \begin{frame}
-  \herohigh{Lots of {\color{b-pink} small data}}
+  \herohigh{\color{b-purple} Entirely open}
   \bottomhanging{
-    \includegraphics[width=0.9\paperwidth]{pics/baad/Collage}
+    \includegraphics<1>[width=.85\paperwidth]{pics/baad/F2015.png}
+    \includegraphics<2>[width=.95\paperwidth]{snippets/baad_package}
   }
 \end{frame}
 
-\begin{frame}
-  \herohigh{{\color{b-blue} \#otherpeoplesdata}}
-  \begin{tikzpicture}[remember picture, overlay]
-  \node[anchor = south, align=center] at ($(current page.south) +(0, 2cm)$) {
-      \includegraphics[width=.85\paperwidth]{shots/otherpeoplesdata.png}
- };
-  \end{tikzpicture}
-\end{frame}
-
+%-----------------------------------
 
 \begin{frame}
-  \herohigh{\color{b-purple} Script everything}
-
-  \begin{tikzpicture}[remember picture, overlay]%
-    \node[anchor=north, align=center] at
-    ($(current page.center) + (0, .17\paperheight)$) {
-    \includegraphics[width=.95\paperwidth]{snippets/baad_rebuild}};
-    
-    \node[anchor=north, align=center] at
-    ($(current page.center) + (0, -.2\paperheight)$) {
-    \only<2>{\normalsize {\FA \faThumbsUp} Easy to modify, transparent, extensible}
-    };
-  \end{tikzpicture}
-\end{frame}
-
-
-\begin{frame}
-  \herohigh{\color{b-pink} Principles}
- 
+  \herohigh{How we {\color{b-pink} built BAAD}}
   \begin{tikzpicture}[remember picture, overlay]%
     \node [anchor=north, align=left] at
     ($(current page.center) + (0, .17\paperheight)$) {%
+    \only<1>{\includegraphics[width=0.9\paperwidth]{pics/baad/Collage}}
+    \only<2>{
       \begin{tabular}{c l}
-        & Pipeline for processing and review\\
-        & Don't modify raw data files \\
-        & Encode meta-data as data \\
-        & Version control \\
+        1. & Start open\\
+        2. & Script everything\\
+        3. & Pipeline for processing\\
+        4. & Version control \\
+        5. & Collaborate\\
+        6. & Automate\\
+        7. & Review process\\
       \end{tabular}
+    }
   };
   \end{tikzpicture}
 \end{frame}
 
 
 \begin{frame}
-  \herohigh{\color{b-purple} Pipeline}
-  \bottomhangingborder{
-    \includegraphics[width=.75\paperwidth]{downloads/pipeline.png}
-  }
+  \herohigh{\color{b-purple} 1. Start open}
+    \begin{tikzpicture}[remember picture, overlay]%
+    \node[anchor=north west, align=left, text width=12cm] at
+    ($(current page.west) + (0.05\paperwidth, 0.05\paperheight)$) {
+      \footnotesize
+        {\color{b-blue} Daniel:} {\color{white}Would you like to co-author a data paper in Ecology? }\\
+
+        {\color{b-pink} Yes {\FA \faArrowRight}}  {\color{white}Great, tell us what you've got.} \\
+
+        {\color{b-pink} No {\FA \faArrowRight}}  {\color{white} No worries. Get back to us if you change your mind.}\\
+    };
+  \end{tikzpicture}
 \end{frame}
 
 \begin{frame}
-  \minionhigh{\color{b-purple} Encode meta-data as data}
-  \bottomhanging{
-    \includegraphics[width=.95\paperwidth]{snippets/baad_dataMatch}
-  }
+  \herohigh{\color{b-purple} 2. Script everything}
+
+  \begin{tikzpicture}[remember picture, overlay]%
+    \node[anchor=north, align=center] at
+    ($(current page.center) + (0, 0.17\paperheight)$) {
+    \normalsize {\FA \faThumbsUp} Transparent, extensible
+    };
+    \pause
+    \node[anchor=north, align=center] at
+    ($(current page.center) + (0, 0\paperheight)$) {
+    \includegraphics[width=.95\paperwidth]{snippets/baad_rebuild}};
+  \end{tikzpicture}
+\end{frame}
+
+
+\begin{frame}
+  \herohigh{\color{b-pink} 3. Pipeline}
+
+  \begin{tikzpicture}[remember picture, overlay]%
+    \node [anchor=north, align=left] at
+    ($(current page.center) + (0, .17\paperheight)$) {%
+      \begin{tabular}{c l}
+        & Change units\\
+        & Change variable names \\
+        & Record methods\\
+        & Don't modify raw data files \\
+        & Encode meta-data as data \\
+      \end{tabular}
+  };
+  \end{tikzpicture}
 \end{frame}
 
 \begin{frame}
-  \herohigh{\color{b-pink} Review}
-  \bottomhangingborder{
-    \includegraphics[width=.75\paperwidth]{downloads/data_review_error.png}
-  }
-\end{frame}
-
-\begin{frame}
-  \herohigh{\color{b-purple}  Collaborate}%
+  \minionhigh{  {\color{b-purple} 4. Version control} {\color{white} \&}
+      {\color{b-orange}  5. Collaboration}}%
   \lowerhalf{
     \LARGE {\color{white} R + {\color{b-purple} git} +
           {\color{b-orange}GitHub} =} {\color{b-pink}\heart}%
@@ -196,7 +209,8 @@
 
 
 \begin{frame}
-  \minionhigh{\LARGE{\color{b-pink} CI} {\color{white} = }\color{b-blue}Continuous Integration}
+  \minionhigh{{\LARGE6. Automate}
+  \\[0ex]\color{b-pink} \hspace{2em} (Continuous Integration)}
   \lowerhalf{
     \begin{minipage}{\textwidth}
       \begin{enumerate}
@@ -226,41 +240,26 @@
 \end{frame}
 
 \begin{frame}
-  \herohigh{\color{b-purple} Entirely open}
-  \bottomhanging{
-    \includegraphics<1>[width=.85\paperwidth]{pics/baad/F2015.png}
-    \includegraphics<2>[width=.95\paperwidth]{snippets/baad_package}
+  \herohigh{\color{b-pink} 7. Review}
+  \bottomhangingborder{
+    \includegraphics[width=.75\paperwidth]{downloads/data_review_error.png}
   }
 \end{frame}
 
-\begin{frame}
-  \herohigh{\color{b-purple} Started open}
-    \begin{tikzpicture}[remember picture, overlay]%
-    \node[anchor=north west, align=left, text width=12cm] at
-    ($(current page.west) + (0.05\paperwidth, 0.05\paperheight)$) {
-      \footnotesize
-        {\color{b-blue} Daniel:} {\color{white}Would you like to co-author a data paper in Ecology? }\\
-        
-        {\color{b-pink} Yes {\FA \faArrowRight}}  {\color{white}Great, tell us what you've got.} \\
-    
-        {\color{b-pink} No {\FA \faArrowRight}}  {\color{white} No worries. Get back to us if you change you're mind.}\\
-    };
+%-----------------------------------
+{\setbeamercolor{background canvas}{bg=black}
+\setbeamercolor{frametitle}{bg=black}
+\begin{frame}\frametitle{\color{b-blue} New techniques for modern ecology}
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor = north, align=center] at ($(current page.south) +(0,8.5cm)$) {
+    \includegraphics[width=0.55\textwidth]{downloads/BTFF15.jpg}
+   };
   \end{tikzpicture}
 \end{frame}
-
-\begin{frame}
-  \herohigh{\color{b-purple} remake}
-  \bottomhanging{
-    \includegraphics<1>[width=0.8\paperwidth]{shots/remake_diagram}%
-    \includegraphics<2>[width=1\paperwidth]{shots/remake_duursma}%
-    \includegraphics<3>[width=0.8\paperwidth]{snippets/remake_figures}%
-    \includegraphics<4>[width=0.7\paperwidth]{snippets/remake_yaml}%
-
-  }
-\end{frame}
+}
 
 \begin{frame}\frametitle{ {\color{b-pink} Thanks to collaborators}}
-  
+
   \begin{tikzpicture}[remember picture, overlay]%
     \node [anchor=north, align=left] at
     ($(current page.center) + (0, .4\paperheight)$) {%
@@ -268,13 +267,13 @@
       \begin{tabular}{c >{\color{white}}l  c >{\color{white}}l }
         \raisebox{-.03\paperheight}{%
           \includegraphics[height=.12\paperheight]{pics/people/FitzJohn}}&
-        Rich FitzJohn  & 
+        Rich FitzJohn  &
         \raisebox{-.03\paperheight}{%
           \includegraphics[height=.12\paperheight]{pics/people/Duursma}}&
         Remko Duursma  \\
         \raisebox{-.03\paperheight}{%
           \includegraphics[height=.12\paperheight]{pics/people/Barneche}}&
-        Diego Barneche & 
+        Diego Barneche &
         \raisebox{-.03\paperheight}{%=
           \includegraphics[height=.12\paperheight]{pics/people/Ishihara}}&
         Masae Ishihara \\
@@ -284,7 +283,7 @@
   \node [anchor=south, align=left, text width = 12cm] at
     ($(current page.south) + (0, 0.05cm)$) {%
    {\baselineskip=2.5pt\fontsize{9pt}{9pt} \selectfont  \color{white} \\
-   {\color{b-blue}Australia:} Angelica V{\aa}rhammar, Michael Aspinwall, Michael Battaglia, James Camac, Steve Hamilton, Lindsay Hutley, Karel Mokany, Anthony O'Grady, Olusegun Osunkoya, David Tissue, Elizabeth Wenk, Richard Williams,Fabiano de Aquino Ximenes \par
+   {\color{b-blue}Australia:} Angelica V{\aa}rhammar, Michael Aspinwall, Michael Battaglia, James Camac, Steve Hamilton, Lindsay Hutley, Karel Mokany, Anthony O'Grady, Olusegun Osunkoya, David Tissue, Elizabeth Wenk, Richard Williams, Fabiano de Aquino Ximenes \par
    \vspace{1em}
    {\color{b-blue} World:} Masahiro Aiba, Makoto Ando, Niels Anten, Jennifer Baltzer, Christopher Baraloto, John Battles, Ben Bond-Lamberty, Michiel van Breugel,  Yves Claveau, Lluís Coll, Masako Dannoura, Sylvain Delagrange, Jean-Christophe Domec, Farrah Fatemi, Wang Feng, Veronica Gargaglione, Yoshiaki Goto, Akio Hagihara, Jefferson Hall, Degi Harja, Tsutom Hiura, Robert Holdaway,  Tomoaki Ichie, Eric Jokela, Anu Kantola, Jeff Kelly, Tanaka Kenzo, David King, Brian Kloeppel, Takashi Kohyama, Akira Komiyama, Jean-Paul Laclau, Christopher Lusk, Douglas Maguire, Guerric le Maire, Annikki M{\"a}kel{\"a}, Lars Markesteijn, John Marshall, Katherine McCulloh, Itsuo Miyata, Shigeta Mori, Randall Myster, Masahiro Nagano, Shawna Naidu, Yann Nouvellon, Kevin O'Hara, Toshiyuki Ohtsuka, Noriyuki Osada,  Pablo Luis Peri, Any Mary Petritan, Lourens Poorter, Angelika Portsmuth, Catherine Potvin, Johannes Ransijn, Douglas Reid, Sabina Ribeiro, Scott Roberts, Rolando Rodríguez, Angela Salda{\~n}a-Acosta, Ignacio Santa-Regina, Kaichiro Sasa, Galia Selaya, Stephen Sillett, Frank Sterck, Kentaro Takagi, Takeshi Tange, Hiroyuki Tanouchi, Toru Umehara, Hajime Utsugi, Matthew Vadeboncoeur, Fernando Valladares, Petteri Vanninen, Jian Wang, Atsushi Yamaba, Toshihiro Yamada, Takuo Yamakura, Ruth Yanai, Robert York \par
 }
@@ -297,21 +296,26 @@
   \herohigh{\color{b-blue}Resources}
   \begin{tikzpicture}[remember picture, overlay]%
     \node[anchor=north west,align=left,font=\small] at
-    ($(current page.west) + (0.05\paperwidth, .17\paperheight)$) {
+    ($(current page.west) + (0.05\paperwidth, .07\paperheight)$) {
       \begin{tabular}{>{\color{white}}r >{\color{b-grey}\footnotesize}l}
       Blog post &
-      \hrefp{http}{ropensci.org/blog/2015/06/03/baad/}\\      
+        \hrefp{http}{ropensci.org/blog/2015/06/03/baad/}\\
       Paper &
-      \hrefp{http}{doi.org/10.1890/14-1889.1}\\
+        \hrefp{http}{doi.org/10.1890/14-1889.1}\\
       Code &
-      \hrefp{https}{github.com/dfalster/baad}\\
-      Baad.data&
-      \hrefp{https}{github.com/traitecoevo/baad.data}\\
+        \hrefp{https}{github.com/dfalster/baad}\\
+      Baad.data &
+        \hrefp{https}{github.com/traitecoevo/baad.data}\\
+      Analysis &
+        \hrefp{https}{github.com/RemkoDuursma/baadanalysis}\\
       Remake &
-      \hrefp{https}{github.com/richfitz/remake}\\
-      Analysis & \hrefp{https}{github.com/RemkoDuursma/baadanalysis}\\
+        \hrefp{https}{github.com/richfitz/remake}\\
     \end{tabular}
   };
+  \node[anchor=north east, fill= white, inner sep=1pt] at
+    ($(current page.east) + (0, 0.5\paperheight)$) {
+      \includegraphics[height=.4\paperheight]{downloads/michael.png}
+      };
   \end{tikzpicture}
 \end{frame}
 
