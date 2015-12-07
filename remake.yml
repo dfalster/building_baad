@@ -12,54 +12,15 @@ knitr_options:
     chdir: true
 
 plot_options:
-  wide:
-    width: 12
-    height: 4
   square3:
     width: 3
     height: 3
-  square4:
-    width: 4
-    height: 4
-  square5:
-    width: 5
-    height: 5
   square6:
     width: 6
-    height: 6
-  square8:
-    width: 8
-    height: 8
-  square10:
-    width: 10
-    height: 10
-  square12:
-    width: 12
-    height: 12
-  9by6:
-    width: 9
     height: 6
   9by4:
     width: 9
     height: 4
-  18by12:
-    width: 17
-    height: 12
-  7by5:
-    width: 7.5
-    height: 5
-  6by4:
-    width: 6
-    height: 4
-  6by3:
-    width: 6
-    height: 3
-  3by2.5:
-    width: 3
-    height: 2.5
-  3by8:
-    width: 3
-    height: 8
 
 targets:
   all:
@@ -76,7 +37,6 @@ targets:
   figures:
     depends:
       - downloads/michael.png
-      - downloads/pipeline.png
       - figures/map.pdf
       - downloads/data_review_error.png
       - figures/baad_variable_count.pdf
@@ -114,10 +74,6 @@ targets:
  
   downloads/michael.png:
     download: https://raw.githubusercontent.com/dfalster/baad/master/extra/baad.png
-    cleanup_level: purge
-
-  downloads/pipeline.png:
-    download: https://raw.githubusercontent.com/dfalster/baad/3c8ace94a913f4d6c914a244021742ab18a4d639/ms/Figure2.png
     cleanup_level: purge
 
   downloads/data_review_error.png:
