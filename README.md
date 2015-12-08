@@ -2,11 +2,11 @@
 
 This code repository contains code needed to reproduce the slides of a talk given at the Ecological Society of Australia conference, in Adelaide on Wednesday, December 2, 2015:
 
-Falster DS, FitzJohn RG, Duursma RA & Darneche D "The challenge of combining 176 x #otherpeoplesdata to create the Biomass And Allometry Database (BAAD)". doi: [xxx](http://xxx)
+Falster DS, FitzJohn RG, Duursma RA & Darneche D "The challenge of combining 176 x #otherpeoplesdata to create the Biomass And Allometry Database (BAAD)". doi: [10.6084/m9.figshare.1619733](http://dx.doi.org/10.6084/m9.figshare.1619733)
 
 **Abstract**: Despite the hype around "big data", a more immediate problem facing many scientific analyses is that large-scale databases must be assembled from a collection of small independent and heterogeneous fragments -- the outputs of many and isolated scientific studies conducted around the globe. Together with 92 other co-authors, we recently published the Biomass And Allometry Database (BAAD) as a data paper in the journal Ecology, combining data from 176 different scientific studies into a single unified database. BAAD is unique in that the workflow -- from raw fragments to homogenised database -- is entirely open and reproducible. in this talk I introduce BAAD and illustrate solutions for some of the challenges of working with lots and lots of #otherpeople's data.
 
-**Slides**: A copy of the compiled presentation is available at ...
+**Slides**: A copy of the compiled presentation is available at [10.6084/m9.figshare.1619733](http://dx.doi.org/10.6084/m9.figshare.1619733).
 
 # Rebuilding
 
