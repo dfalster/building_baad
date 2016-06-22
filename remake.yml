@@ -2,6 +2,7 @@ packages:
   - smatr
   - maps
   - mapdata
+  - baad.data
 
 sources:
   - R
@@ -85,7 +86,7 @@ targets:
     cleanup_level: purge
 
   baad:
-    command: readRDS("downloads/baad.rds")
+    command: baad_data(I("1.0.1"))
 
   figures/map.pdf:
     command: figure_map(baad)

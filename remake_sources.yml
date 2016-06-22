@@ -1,3 +1,7 @@
 smatr:
   source: bitbucket
   repo: remkoduursma/smatr
+
+baad.data:
+  source: github
+  repo: traitecoevo/baad.data
