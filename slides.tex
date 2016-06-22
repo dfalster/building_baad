@@ -46,6 +46,73 @@
  \end{tikzpicture}
 \end{frame}
 
+%-----------------------------------
+\begin{frame}\frametitle{\color{b-blue} A global compilation}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor = south, align=center] at ($(current page.south) +(0,1cm)$) {
+    \color{white} 176 studies,  21084 plants, 678 species
+  };
+
+  \node[anchor = south, align=center, fill=white, rounded corners,
+  draw=b-orange, line width=2pt] at ($(current page.south) +(0,2.5cm)$) {
+    \includegraphics<1>[width=0.98\textwidth]{figures/map}
+  };
+  \end{tikzpicture}
+\end{frame}
+
+
+%-----------------------------------
+\begin{frame}\frametitle{\color{b-purple} Harvested plants}
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor = south, align=center] at ($(current page.south) +(0,0.25cm)$) {
+    \includegraphics<1>[width=0.95\textwidth]{pics/baad/Slide10.jpg}
+  };
+  \end{tikzpicture}
+\end{frame}
+
+%-----------------------------------
+\begin{frame}\frametitle{\color{b-pink} 61 Variables}
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor = south, align=center, fill=white, rounded corners,
+  draw=b-green, line width=2pt] at ($(current page.south) +(1, 0.25cm)$) {
+    \includegraphics<1>[width=0.7\textwidth]{figures/baad_variable_count.pdf}
+   };
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+  \herohigh{\color{b-purple} Entirely open}
+  \bottomhanging{
+    \includegraphics<1>[width=.85\paperwidth]{pics/baad/F2015.png}
+  }
+\end{frame}
+
+%-----------------------------------
+\begin{frame}\frametitle{ Why (1): \color{b-blue} We needed data}
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor = north, align=center, fill=white, rounded corners,
+  draw=b-orange, line width=2pt] at ($(current page.south) +(0,8cm)$) {
+    \includegraphics<1>[width=0.6\textwidth]{figures/tradeoff-Falster2015-1.pdf}
+    \includegraphics<2>[width=0.6\textwidth]{figures/tradeoff-Falster2015-2.pdf}
+    \includegraphics<3>[width=0.6\textwidth]{figures/tradeoff-Falster2015-3.pdf}
+   };
+  \end{tikzpicture}
+\end{frame}
+
+%-----------------------------------
+{\setbeamercolor{background canvas}{bg=black}
+\setbeamercolor{frametitle}{bg=black}
+\begin{frame}\frametitle{Why (2): \color{b-orange} New techniques for science}
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor = north, align=center] at ($(current page.south) +(0,8.5cm)$) {
+    \includegraphics[width=0.55\textwidth]{downloads/BTFF15.jpg}
+   };
+  \end{tikzpicture}
+\end{frame}
+}
+
+%-----------------------------------
 
 \begin{frame}
   \herohigh{Lots of {\color{b-pink} small data}}
@@ -64,63 +131,28 @@
 \end{frame}
 
 %-----------------------------------
-\begin{frame}\frametitle{\color{b-purple} Harvested plants}
-\begin{tikzpicture}[remember picture, overlay]
-  \node[anchor = south, align=center] at ($(current page.south) +(0,0.25cm)$) {
-    \includegraphics<1>[width=0.95\textwidth]{pics/baad/Slide10.jpg}
-  };
-  \end{tikzpicture}
-\end{frame}
 
-%-----------------------------------
-\begin{frame}\frametitle{\color{b-blue} Global compilation}
+\begin{frame}\frametitle{{\color{b-blue}General challenges} } % of {\color{b-pink} building BAAD}
+%       1. & Harmonise fragments\\
+%       2. & Versioned releases\\
+%       3. & Reproducible research \\
+%       4. & Entirely free \\
+%       6. & Invites crowd sourcing\\
 
-\begin{tikzpicture}[remember picture, overlay]
-  \node[anchor = south, align=center] at ($(current page.south) +(0,1cm)$) {
-    \color{white} 176 studies,  21084 plants, 678 species
-  };
-
-  \node[anchor = south, align=center, fill=white, rounded corners,
-  draw=b-orange, line width=2pt] at ($(current page.south) +(0,2.5cm)$) {
-    \includegraphics<1>[width=0.98\textwidth]{figures/map}
-  };
-  \end{tikzpicture}
-\end{frame}
-
-%-----------------------------------
-\begin{frame}\frametitle{ Why: \color{b-blue} We needed data}
-\begin{tikzpicture}[remember picture, overlay]
-  \node[anchor = north, align=center, fill=white, rounded corners,
-  draw=b-orange, line width=2pt] at ($(current page.south) +(0,8cm)$) {
-    \includegraphics<1>[width=0.6\textwidth]{figures/tradeoff-Falster2015-1.pdf}
-    \includegraphics<2>[width=0.6\textwidth]{figures/tradeoff-Falster2015-2.pdf}
-    \includegraphics<3>[width=0.6\textwidth]{figures/tradeoff-Falster2015-3.pdf}
-   };
-  \end{tikzpicture}
-\end{frame}
-
-%-----------------------------------
-\begin{frame}\frametitle{\color{b-pink} 61 Variables}
-\begin{tikzpicture}[remember picture, overlay]
-  \node[anchor = south, align=center, fill=white, rounded corners,
-  draw=b-green, line width=2pt] at ($(current page.south) +(1, 0.25cm)$) {
-    \includegraphics<1>[width=0.7\textwidth]{figures/baad_variable_count.pdf}
-   };
-  \end{tikzpicture}
-\end{frame}
-
-\begin{frame}
-  \herohigh{\color{b-purple} Entirely open}
-  \bottomhanging{
-    \includegraphics<1>[width=.85\paperwidth]{pics/baad/F2015.png}
-    \includegraphics<2>[width=.95\paperwidth]{snippets/baad_package}
-  }
+\begin{tikzpicture}[remember picture, overlay]%
+  \node [anchor=north, align=left] at
+  ($(current page.center) + (0, 0.3\paperheight)$) {%
+    \includegraphics<1>[width=1\paperwidth]{diagrams/challenge_baad_1}
+    \includegraphics<2>[width=1\paperwidth]{diagrams/challenge_baad_2}
+    \includegraphics<3>[width=1\paperwidth]{diagrams/challenge_baad_3}
+ };
+\end{tikzpicture}
 \end{frame}
 
 %-----------------------------------
 
 \begin{frame}
-  \herohigh{How we {\color{b-pink} built BAAD}}
+  \herohigh{ {\color{b-green}Harmonising}}
   \begin{tikzpicture}[remember picture, overlay]%
     \node [anchor=north, align=left] at
     ($(current page.center) + (0, .17\paperheight)$) {%
@@ -223,13 +255,13 @@
   \note{}
 \end{frame}
 
-\begin{frame}
-  \minionhigh{%
-    \only<1>{Runs on virtual machine\ldots}}
-  \bottomhanging{%
-    \includegraphics<1>[width=\paperwidth]{shots/travis_spinup}%
-  }
-\end{frame}
+% \begin{frame}
+%   \minionhigh{%
+%     \only<1>{Runs on virtual machine\ldots}}
+%   \bottomhanging{%
+%     \includegraphics<1>[width=\paperwidth]{shots/travis_spinup}%
+%   }
+% \end{frame}
 
 \begin{frame}
   \minionhigh{Set and forget -- never gets bored}
@@ -240,23 +272,30 @@
 \end{frame}
 
 \begin{frame}
-  \herohigh{\color{b-pink} 7. Review}
+  \herohigh{{\color{b-pink} 7. Reviews } (via knitr)}
   \bottomhangingborder{
     \includegraphics[width=.75\paperwidth]{downloads/data_review_error.png}
   }
 \end{frame}
 
 %-----------------------------------
-{\setbeamercolor{background canvas}{bg=black}
-\setbeamercolor{frametitle}{bg=black}
-\begin{frame}\frametitle{\color{b-blue} New techniques for modern ecology}
-\begin{tikzpicture}[remember picture, overlay]
-  \node[anchor = north, align=center] at ($(current page.south) +(0,8.5cm)$) {
-    \includegraphics[width=0.55\textwidth]{downloads/BTFF15.jpg}
-   };
-  \end{tikzpicture}
+
+\begin{frame}
+  \herohigh{\color{b-orange} Distribute}
+  \bottomhanging{
+    \includegraphics<1>[width=.85\paperwidth]{pics/baad/F2015.png}
+    \includegraphics<2>[width=.95\paperwidth]{snippets/baad_package}
+  }
 \end{frame}
-}
+
+\begin{frame}
+  \herohigh{\color{b-pink} Reproduce}
+  \bottomhanging{
+    \includegraphics[width=0.9\paperwidth]{pics/baad/Collage}
+ }
+\end{frame}
+
+%-----------------------------------
 
 \begin{frame}\frametitle{ {\color{b-pink} Thanks to collaborators}}
 
