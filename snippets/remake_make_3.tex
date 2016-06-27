@@ -1,0 +1,17 @@
+\documentclass[class=minimal,border=0]{standalone}
+\input{snippet}
+\begin{document}%
+\begin{BVerbatim}[bgcolor=b-darkgrey]
+\color{b-blue} > remake::make("baad")
+\color{white}
+[  LOAD ]
+[  READ ]                 |  \color{b-grey} loading sources
+[   {\color{b-green}OK}  ] Abe1981         | \color{b-grey} Abe1981 <- load_study("data/Abe1...
+[   {\color{b-green}OK}  ] Aiba2005        | \color{b-grey} Aiba2005 <- load_study("data/Aib...
+[   {\color{b-green}OK}  ] Aiba2007        | \color{b-grey} Aiba2007 <- load_study("data/Aib...
+[   {\color{b-green}OK}  ] Albrektson1984  | \color{b-grey} Albrektson1984 <- load_study("da...
+[  ...  ]
+[   {\color{b-green}OK}  ] baad            | \color{b-grey} baad <- combine_baad(Abe1981, Ai...
+
+\end{BVerbatim}
+\end{document}

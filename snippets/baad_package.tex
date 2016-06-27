@@ -2,14 +2,11 @@
 \input{snippet}
 \begin{document}%
 \begin{BVerbatim}[bgcolor=b-darkgrey]
-\color{b-blue}Access baad directly from within R
 \color{b-green}
-\color{b-green}```r
 \color{b-green}library(baad.data)
-\color{b-green}baad <- baad_data("1.0.0")
-\color{b-green}names(baad)
-\color{b-green}[1] "contacts"   "data"   "dictionary" 
-\color{b-green} "metadata"   "methods"    "references" "bib" 
-\color{b-green} ```
+\color{b-green}baad_data_versions()
+\color{b-blue}[1] "0.9.0" "1.0.0"  "1.0.1"
+\color{b-green}x <- baad_data("1.0.0")
+\color{b-green}x <- baad_data("1.0.1")
 \end{BVerbatim}
 \end{document}

@@ -23,7 +23,7 @@
   \begin{tikzpicture}[remember picture, overlay]
     \node (A) at ($(current page.center) + (0, .17\paperheight)$) {
       \resizebox{.9\paperwidth}{!}{%
-        \color{b-blue}\bf The challenge of combining 176 x \#otherpeoplesdata to create}
+        \color{b-blue}\bf The challenges of combining 176 x \#otherpeoplesdata to create}
     };
     \node[anchor=north] at (A.south) {
       \resizebox{.9\paperwidth}{!}{%
@@ -47,6 +47,15 @@
 \end{frame}
 
 %-----------------------------------
+\begin{frame}\frametitle{\color{b-purple} Harvested plants}
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor = south, align=center] at ($(current page.south) +(0,0.25cm)$) {
+    \includegraphics<1>[width=0.95\textwidth]{pics/baad/Slide10.jpg}
+  };
+  \end{tikzpicture}
+\end{frame}
+
+%-----------------------------------
 \begin{frame}\frametitle{\color{b-blue} A global compilation}
 
 \begin{tikzpicture}[remember picture, overlay]
@@ -61,18 +70,18 @@
   \end{tikzpicture}
 \end{frame}
 
+% %-----------------------------------
+
+% \begin{frame}
+%   \herohigh{\color{b-purple} Co-authored paper}
+%   \bottomhanging{
+%     \includegraphics<1>[width=.85\paperwidth]{pics/baad/F2015.png}
+%   }
+% \end{frame}
 
 %-----------------------------------
-\begin{frame}\frametitle{\color{b-purple} Harvested plants}
-\begin{tikzpicture}[remember picture, overlay]
-  \node[anchor = south, align=center] at ($(current page.south) +(0,0.25cm)$) {
-    \includegraphics<1>[width=0.95\textwidth]{pics/baad/Slide10.jpg}
-  };
-  \end{tikzpicture}
-\end{frame}
 
-%-----------------------------------
-\begin{frame}\frametitle{\color{b-pink} 61 Variables}
+\begin{frame}\frametitle{{\color{b-pink} 31 variables} for individual plants}
 \begin{tikzpicture}[remember picture, overlay]
   \node[anchor = south, align=center, fill=white, rounded corners,
   draw=b-green, line width=2pt] at ($(current page.south) +(1, 0.25cm)$) {
@@ -81,15 +90,8 @@
   \end{tikzpicture}
 \end{frame}
 
-\begin{frame}
-  \herohigh{\color{b-purple} Entirely open}
-  \bottomhanging{
-    \includegraphics<1>[width=.85\paperwidth]{pics/baad/F2015.png}
-  }
-\end{frame}
-
 %-----------------------------------
-\begin{frame}\frametitle{ Why (1): \color{b-blue} We needed data}
+\begin{frame}\frametitle{ Why (1): \color{b-blue} I needed data}
 \begin{tikzpicture}[remember picture, overlay]
   \node[anchor = north, align=center, fill=white, rounded corners,
   draw=b-orange, line width=2pt] at ($(current page.south) +(0,8cm)$) {
@@ -103,12 +105,33 @@
 %-----------------------------------
 {\setbeamercolor{background canvas}{bg=black}
 \setbeamercolor{frametitle}{bg=black}
-\begin{frame}\frametitle{Why (2): \color{b-orange} New techniques for science}
+\begin{frame}\frametitle{Why (2): \color{b-orange} New workflow}
 \begin{tikzpicture}[remember picture, overlay]
   \node[anchor = north, align=center] at ($(current page.south) +(0,8.5cm)$) {
-    \includegraphics[width=0.55\textwidth]{downloads/BTFF15.jpg}
+    \includegraphics<1-2>[width=0.55\textwidth]{downloads/BTFF15.jpg}
    };
-  \end{tikzpicture}
+  \node[anchor = west, align=center, fill=white] at ($(current page.west) +(0,2cm)$) {
+    \includegraphics[width=0.15\textwidth]{pics/cut-copy-paste_icon}
+   };
+  \node[anchor = west, align=center, fill=white] at ($(current page.west) +(0,-0.5cm)$) {
+    \includegraphics[width=0.15\textwidth]{pics/Excel_icon}
+   };
+  \node[anchor = west, align=center, fill=white] at ($(current page.west) +(0,-3cm)$) {
+    \includegraphics[width=0.15\textwidth]{pics/Email_icon}
+   };
+
+\only<2>{
+  \node[anchor = east, align=center, fill=white] at ($(current page.east) +(0,2cm)$) {
+    \includegraphics[width=0.15\textwidth]{pics/Octocat.png}
+   };
+  \node[anchor = east, align=center, fill=white] at ($(current page.east) +(0,-0.5cm)$) {
+    \includegraphics[width=0.15\textwidth]{pics/rstudio.png}
+   };
+  \node[anchor = east, align=center, fill=white] at ($(current page.east) +(0,-3cm)$) {
+    \includegraphics[width=0.15\textwidth]{pics/travis-mascot.png}
+   };
+}
+\end{tikzpicture}
 \end{frame}
 }
 
@@ -156,8 +179,8 @@
   \begin{tikzpicture}[remember picture, overlay]%
     \node [anchor=north, align=left] at
     ($(current page.center) + (0, .17\paperheight)$) {%
-    \only<1>{\includegraphics[width=0.9\paperwidth]{pics/baad/Collage}}
-    \only<2>{
+    % \only<1>{\includegraphics[width=0.9\paperwidth]{pics/baad/Collage}}
+    \only<1>{
       \begin{tabular}{c l}
         1. & Start open\\
         2. & Script everything\\
@@ -185,6 +208,8 @@
 
         {\color{b-pink} No {\FA \faArrowRight}}  {\color{white} No worries. Get back to us if you change your mind.}\\
     };
+
+    % To do: add license pics: CC0, CC-BY
   \end{tikzpicture}
 \end{frame}
 
@@ -194,12 +219,12 @@
   \begin{tikzpicture}[remember picture, overlay]%
     \node[anchor=north, align=center] at
     ($(current page.center) + (0, 0.17\paperheight)$) {
-    \normalsize {\FA \faThumbsUp} Transparent, extensible
-    };
-    \pause
+    \normalsize {\FA \faThumbsUp} Transparent, extensible, distributed};
     \node[anchor=north, align=center] at
     ($(current page.center) + (0, 0\paperheight)$) {
-    \includegraphics[width=.95\paperwidth]{snippets/baad_rebuild}};
+    \includegraphics<1>[width=.65\paperwidth]{diagrams/challenge_baad_0}
+    \includegraphics<2>[width=.95\paperwidth]{snippets/baad_rebuild}
+    };
   \end{tikzpicture}
 \end{frame}
 
@@ -242,7 +267,7 @@
 
 \begin{frame}
   \minionhigh{{\LARGE6. Automate}
-  \\[0ex]\color{b-pink} \hspace{2em} (Continuous Integration)}
+  \\[0ex]\color{b-green} \hspace{2em} (Continuous Integration)}
   \lowerhalf{
     \begin{minipage}{\textwidth}
       \begin{enumerate}
@@ -263,16 +288,16 @@
 %   }
 % \end{frame}
 
-\begin{frame}
-  \minionhigh{Set and forget -- never gets bored}
-  \bottomhanging{
-    \includegraphics[width=0.65\paperwidth]{shots/travis_builds}%
-  }
-  \bottomleft{\href{https://travis-ci.org/dfalster/baad/builds}{travis-ci.org/dfalster/baad/builds}}
-\end{frame}
+% \begin{frame}
+%   \minionhigh{Set and forget -- never gets bored}
+%   \bottomhanging{
+%     \includegraphics[width=0.65\paperwidth]{shots/travis_builds}%
+%   }
+%   \bottomleft{\href{https://travis-ci.org/dfalster/baad/builds}{travis-ci.org/dfalster/baad/builds}}
+% \end{frame}
 
 \begin{frame}
-  \herohigh{{\color{b-pink} 7. Reviews } (via knitr)}
+  \herohigh{{\color{b-green} 7. Reviews } \color{white}  (via knitr)}
   \bottomhangingborder{
     \includegraphics[width=.75\paperwidth]{downloads/data_review_error.png}
   }
@@ -284,16 +309,69 @@
   \herohigh{\color{b-orange} Distribute}
   \bottomhanging{
     \includegraphics<1>[width=.85\paperwidth]{pics/baad/F2015.png}
-    \includegraphics<2>[width=.95\paperwidth]{snippets/baad_package}
+    \includegraphics<2>[width=1\paperwidth]{diagrams/challenge_baad_3}
   }
 \end{frame}
+
+%-----------------------------------
+
+\begin{frame}
+  \herohigh{\color{b-orange} Distribute \color{white} as package}
+  \bottomhanging{
+    \includegraphics[width=.95\paperwidth]{snippets/baad_package}
+  }
+\end{frame}
+
+%-----------------------------------
+
+\begin{frame}
+  \herohigh{ \resizebox{.9\paperwidth}{!}{Use package {\color{b-orange} datastorr}}}
+  \vspace{3em}
+    \begin{itemize}
+      \color{b-green}
+      \item Fetches {\color{b-orange}``releases''} from {\color{b-pink} github}
+      \item {\color{b-pink}20 lines} to setup for BAAD
+      \item Another example: \color{b-pink} \href{https://github.com/traitecoevo/taxonlookup}{taxonlookup}\\
+    \end{itemize}
+\end{frame}
+
+%-----------------------------------
 
 \begin{frame}
   \herohigh{\color{b-pink} Reproduce}
   \bottomhanging{
-    \includegraphics[width=0.9\paperwidth]{pics/baad/Collage}
+    \includegraphics[width=1\paperwidth]{diagrams/challenge_baad_3}
  }
 \end{frame}
+
+%-----------------------------------
+
+% \begin{frame}
+%   \herohigh{Package \color{b-pink} remake}
+%  \begin{tikzpicture}[remember picture, overlay]%
+%     \node [anchor=north, align=left] at
+%     ($(current page.center) + (0, 0.1\paperheight)$) {%
+%       \begin{tabular}{l l}
+%         \color{b-blue} Targets & \color{white} Objects of interest\\
+%         \color{b-orange}Rules & \color{white}Functions returning targets\\
+%         \color{b-blue}Dependencies & \color{white}Upstream targets\\
+%       \end{tabular}
+%   };
+%   \end{tikzpicture}
+% \end{frame}
+
+\begin{frame}
+  \herohigh{\color{b-pink} Caches intermediates}
+
+  \begin{tikzpicture}[remember picture, overlay]%
+    \node[anchor=west, align=center] at
+    ($(current page.west) + (0, -0.2\paperheight)$) {
+    \includegraphics<1>[width=1.2\paperwidth]{snippets/remake_make_1}
+    \includegraphics<2>[width=1.2\paperwidth]{snippets/remake_make_3}
+    \includegraphics<3>[width=1.2\paperwidth]{snippets/remake_make_2}
+    };
+  \end{tikzpicture}
+  \end{frame}
 
 %-----------------------------------
 
@@ -322,9 +400,7 @@
   \node [anchor=south, align=left, text width = 12cm] at
     ($(current page.south) + (0, 0.05cm)$) {%
    {\baselineskip=2.5pt\fontsize{9pt}{9pt} \selectfont  \color{white} \\
-   {\color{b-blue}Australia:} Angelica V{\aa}rhammar, Michael Aspinwall, Michael Battaglia, James Camac, Steve Hamilton, Lindsay Hutley, Karel Mokany, Anthony O'Grady, Olusegun Osunkoya, David Tissue, Elizabeth Wenk, Richard Williams, Fabiano de Aquino Ximenes \par
-   \vspace{1em}
-   {\color{b-blue} World:} Masahiro Aiba, Makoto Ando, Niels Anten, Jennifer Baltzer, Christopher Baraloto, John Battles, Ben Bond-Lamberty, Michiel van Breugel,  Yves Claveau, Lluís Coll, Masako Dannoura, Sylvain Delagrange, Jean-Christophe Domec, Farrah Fatemi, Wang Feng, Veronica Gargaglione, Yoshiaki Goto, Akio Hagihara, Jefferson Hall, Degi Harja, Tsutom Hiura, Robert Holdaway,  Tomoaki Ichie, Eric Jokela, Anu Kantola, Jeff Kelly, Tanaka Kenzo, David King, Brian Kloeppel, Takashi Kohyama, Akira Komiyama, Jean-Paul Laclau, Christopher Lusk, Douglas Maguire, Guerric le Maire, Annikki M{\"a}kel{\"a}, Lars Markesteijn, John Marshall, Katherine McCulloh, Itsuo Miyata, Shigeta Mori, Randall Myster, Masahiro Nagano, Shawna Naidu, Yann Nouvellon, Kevin O'Hara, Toshiyuki Ohtsuka, Noriyuki Osada,  Pablo Luis Peri, Any Mary Petritan, Lourens Poorter, Angelika Portsmuth, Catherine Potvin, Johannes Ransijn, Douglas Reid, Sabina Ribeiro, Scott Roberts, Rolando Rodríguez, Angela Salda{\~n}a-Acosta, Ignacio Santa-Regina, Kaichiro Sasa, Galia Selaya, Stephen Sillett, Frank Sterck, Kentaro Takagi, Takeshi Tange, Hiroyuki Tanouchi, Toru Umehara, Hajime Utsugi, Matthew Vadeboncoeur, Fernando Valladares, Petteri Vanninen, Jian Wang, Atsushi Yamaba, Toshihiro Yamada, Takuo Yamakura, Ruth Yanai, Robert York \par
+   {\color{b-blue}Data contributors:} Masahiro Aiba, Makoto Ando, Niels Anten, Michael Aspinwall, Jennifer Baltzer, Christopher Baraloto, Michael Battaglia, John Battles, Ben Bond-Lamberty, Michiel van Breugel, James Camac, Yves Claveau, Lluís Coll, Masako Dannoura, Sylvain Delagrange, Jean-Christophe Domec, Farrah Fatemi, Wang Feng, Veronica Gargaglione, Yoshiaki Goto, Akio Hagihara, Jefferson Hall,  Steve Hamilton, Degi Harja, Tsutom Hiura, Robert Holdaway, Lindsay Hutley, Tomoaki Ichie, Eric Jokela, Anu Kantola, Jeff Kelly, Tanaka Kenzo, David King, Brian Kloeppel, Takashi Kohyama, Akira Komiyama, Jean-Paul Laclau, Christopher Lusk, Douglas Maguire, Guerric le Maire, Annikki M{\"a}kel{\"a}, Lars Markesteijn, John Marshall, Katherine McCulloh, Itsuo Miyata, Karel Mokany, Shigeta Mori, Randall Myster, Masahiro Nagano, Shawna Naidu, Yann Nouvellon, Anthony O'Grady, Kevin O'Hara, Toshiyuki Ohtsuka, Noriyuki Osada, Olusegun Osunkoya, Pablo Luis Peri, Any Mary Petritan, Lourens Poorter, Angelika Portsmuth, Catherine Potvin, Johannes Ransijn, Douglas Reid, Sabina Ribeiro, Scott Roberts, Rolando Rodríguez, Angela Salda{\~n}a-Acosta, Ignacio Santa-Regina, Kaichiro Sasa, Galia Selaya, Stephen Sillett, Frank Sterck, Kentaro Takagi, Takeshi Tange, Hiroyuki Tanouchi, David Tissue, Toru Umehara, Hajime Utsugi, Matthew Vadeboncoeur, Fernando Valladares, Petteri Vanninen,  Angelica V{\aa}rhammar, Jian Wang, Elizabeth Wenk, Richard Williams, Fabiano de Aquino Ximenes, Atsushi Yamaba, Toshihiro Yamada, Takuo Yamakura, Ruth Yanai, Robert York \par
 }
    };
 
@@ -332,28 +408,35 @@
 \end{frame}
 
 \begin{frame}
-  \herohigh{\color{b-blue}Resources}
+  \herohigh{\color{b-blue}\resizebox{.9\paperwidth}{!}{Work flow for data compilations}}
   \begin{tikzpicture}[remember picture, overlay]%
     \node[anchor=north west,align=left,font=\small] at
-    ($(current page.west) + (0.05\paperwidth, .07\paperheight)$) {
-      \begin{tabular}{>{\color{white}}r >{\color{b-grey}\footnotesize}l}
-      Blog post &
-        \hrefp{http}{ropensci.org/blog/2015/06/03/baad/}\\
-      Paper &
+    ($(current page.west) + (0.05\paperwidth, .2\paperheight)$) {
+      \begin{tabular}{>{\color{white}}l>{\color{white}}l >{\color{b-grey}\footnotesize}l}
+    {\color{b-green} Harmonise} &
+        More info & Paper &
         \hrefp{http}{doi.org/10.1890/14-1889.1}\\
-      Code &
+            &  Blog post &
+        \hrefp{http}{ropensci.org/blog/2015/06/03/baad/}\\
+       BAAD &
         \hrefp{https}{github.com/dfalster/baad}\\
-      Baad.data &
-        \hrefp{https}{github.com/traitecoevo/baad.data}\\
-      Analysis &
-        \hrefp{https}{github.com/RemkoDuursma/baadanalysis}\\
-      Remake &
+        &     remake &
         \hrefp{https}{github.com/richfitz/remake}\\
-    \end{tabular}
+     {\color{b-orange} Distribute}&
+      baad.data &
+        \hrefp{https}{github.com/traitecoevo/baad.data}\\
+      & datastorr &
+        \hrefp{https}{github.com/richfitz/datastorr}\\
+    {\color{b-pink} Reproduce} &
+      remake &
+        \hrefp{https}{github.com/richfitz/remake}\\
+    &  Analysis &
+        \hrefp{https}{github.com/RemkoDuursma/baadanalysis}\\
+   \end{tabular}
   };
   \node[anchor=north east, fill= white, inner sep=1pt] at
     ($(current page.east) + (0, 0.5\paperheight)$) {
-      \includegraphics[height=.4\paperheight]{downloads/michael.png}
+      \includegraphics[height=.15\paperheight]{pics/userR.png}
       };
   \end{tikzpicture}
 \end{frame}

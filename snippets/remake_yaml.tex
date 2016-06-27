@@ -2,13 +2,9 @@
 \input{snippet}
 \begin{document}%
 \begin{BVerbatim}[bgcolor=b-darkgrey]
-\color{b-pink}remake.yml
-
-\color{b-blue}  downloads/baad.rds:
-\color{b-blue}    {\color{b-purple}download:} {\color{b-green}https://github.com/...}
 
 \color{b-blue}  baad:
-    \color{b-purple}command: {\color{b-orange}readRDS}({\color{b-blue}"downloads/baad.rds"})
+    \color{b-purple}command: {\color{b-orange}baad_data(I("1.0.0"))}
 
 \color{b-blue}  figures/baad_variable_count.pdf:
     \color{b-purple}command:  {\color{b-orange}baad_variable_count}({\color{b-blue}baad})
